@@ -1,7 +1,7 @@
 # Replicon
-Replicon 是一款基于 Typecho 默认主题 [Replica](https://github.com/typecho/typecho/tree/master/usr/themes/default) 开发的博客主题。设计中融入了犬戎个人的审美偏好，希望能在简约现代的基础上提升阅读体验。
+Replicon 是一款基于 Typecho 默认主题 [Replica](https://github.com/typecho/typecho/tree/master/usr/themes/default) 开发的博客主题，希望能在简约现代的基础上提升阅读体验。
 
-目前正在犬戎的狗窝 [犬窝闲谭](https://inuebisu.cn) 上运行。
+目前正在 [速效複寫](https://archive.inuebisu.cn) 上运行。
 
 ## 特性
 ### 字体选择
@@ -70,7 +70,7 @@ Replicon 内置针对打印的样式优化功能，在文章页面按下 `Ctrl +
 ```html
 <div class="friend-container">
     <a class="friend-card" href="https://inuebisu.cn">
-        <img class="friend-avatar" src="https://inuebisu.cn/avatar/kari_512.png" alt="犬窝闲谭">
+        <img class="friend-avatar" src="https://archive.inuebisu.cn/avatar/kari_512.png" alt="犬窝闲谭">
         <div class="friend-info">
             <p class="friend-name">犬窝闲谭</p>
             <p class="friend-description">犬戎的狗窝！</p>
@@ -78,7 +78,7 @@ Replicon 内置针对打印的样式优化功能，在文章页面按下 `Ctrl +
     </a>
 
     <a class="friend-card" href="https://inuebisu.cn">
-        <img class="friend-avatar" src="https://inuebisu.cn/avatar/default_avatar.png" alt="另一位">
+        <img class="friend-avatar" src="https://archive.inuebisu.cn/avatar/default_avatar.png" alt="另一位">
         <div class="friend-info">
             <p class="friend-name">另一位</p>
             <p class="friend-description">神秘人</p>
@@ -86,7 +86,7 @@ Replicon 内置针对打印的样式优化功能，在文章页面按下 `Ctrl +
     </a>
 
     <a class="friend-card" href="https://inuebisu.cn">
-        <img class="friend-avatar" src="https://inuebisu.cn/avatar/default_avatar.png" alt="第三位">
+        <img class="friend-avatar" src="https://archive.inuebisu.cn/avatar/default_avatar.png" alt="第三位">
         <div class="friend-info">
             <p class="friend-name">第三位</p>
             <p class="friend-description">是谁呢</p>
@@ -99,7 +99,7 @@ Replicon 内置针对打印的样式优化功能，在文章页面按下 `Ctrl +
 将 Replicon 源代码上传至 `/usr/themes` 主题目录，在 Typecho 后台的外观设置中启用 Replicon 即可。可根据个人需求调整设置。
 
 ## 示例
-可以访问 [犬窝闲谭](https://inuebisu.cn) 体验主题的实际效果。:P
+可以访问 [速效複寫](https://archive.inuebisu.cn) 体验主题的实际效果。:P
 
 ## 贡献
 欢迎任何形式的贡献！无论是报告错误、提交功能请求、修复问题还是改进文档，犬戎汪都非常感谢您的帮助！
