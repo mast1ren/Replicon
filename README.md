@@ -1,7 +1,10 @@
 # Replicon
+
 Replicon 是一款基于 Typecho 默认主题 [Replica](https://github.com/typecho/typecho/tree/master/usr/themes/default) 开发的博客主题，希望能在简约现代的基础上提升阅读体验。
 
 目前正在 [速效複寫](https://archive.inuebisu.cn) 上运行。
+
+![mockup.png](/mockup.png)
 
 ## 特性
 ### 字体选择
