@@ -138,6 +138,7 @@ This project is licensed under the GNU General Public License v2.0 (GPLv2).
 | 字段 | 类型 | 选项 | 说明 |
 |------|------|------|------|
 | LaTeX 渲染 | 单选 | 启用 / 关闭（默认） | 按需加载 KaTeX，关闭时不影响页面性能 |
+| Mermaid 图表 | 单选 | 启用 / 关闭（默认） | 按需加载 Mermaid.js，启用后可在文章中使用 Mermaid 语法绘制图表 |
 | CC 许可 | 单选 | 完全（默认） / 部分 / 禁止 | 文末版权声明类型 |
 
 ### 新增功能
@@ -146,6 +147,20 @@ This project is licensed under the GNU General Public License v2.0 (GPLv2).
 - 启用后通过 KaTeX 渲染 LaTeX 公式，支持行内 `$...$` 和块级 `$$...$$` 语法
 - 默认关闭，需在文章自定义字段中手动启用
 - 参考：[为 Typecho 增加 LaTeX 公式的渲染](https://nwdan.com/tutorials/typecho-latex-support.html)
+
+#### Mermaid 图表
+- 启用后可在文章中使用 Mermaid 语法绘制流程图、时序图、甘特图等
+- 默认关闭，需在文章自定义字段中手动启用
+- 使用方式：在 Markdown 中用标准代码块语法，语言标记为 `mermaid`：
+  ````
+  ```mermaid
+  graph TD
+      A[开始] --> B{条件}
+      B -->|是| C[执行]
+      B -->|否| D[跳过]
+  ```
+  ````
+- 通过 CDN 按需加载 mermaid@11，未启用的文章不加载任何额外资源
 
 #### 文章版权声明
 文末自动显示版权声明，支持三种模式：
