@@ -124,6 +124,18 @@ function themeFields($layout)
     );
     $layout->addItem($isLatex);
 
+    $isMermaid = new \Typecho\Widget\Helper\Form\Element\Radio(
+        'isMermaid',
+        [
+            1 => _t('启用'),
+            0 => _t('关闭')
+        ],
+        0,
+        _t('Mermaid 图表'),
+        _t('启用后可在文章中使用 Mermaid 语法绘制流程图、时序图等图表')
+    );
+    $layout->addItem($isMermaid);
+
     $isCC = new \Typecho\Widget\Helper\Form\Element\Radio(
         'isCC',
         [

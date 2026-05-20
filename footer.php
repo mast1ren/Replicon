@@ -69,3 +69,24 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 </script>
 <?php endif; ?>
+
+<?php if ($this->is('post') && $this->fields->isMermaid == 1): ?>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    mermaid.initialize({ startOnLoad: false, theme: 'default' });
+    var codeBlocks = document.querySelectorAll('code.lang-mermaid');
+    codeBlocks.forEach(function(block, index) {
+        var pre = block.parentNode;
+        var div = document.createElement('div');
+        div.className = 'mermaid';
+        div.id = 'mermaid-' + index;
+        div.textContent = block.textContent;
+        pre.parentNode.replaceChild(div, pre);
+    });
+    if (codeBlocks.length > 0) {
+        mermaid.run({ querySelector: '.mermaid' });
+    }
+});
+</script>
+<?php endif; ?>
