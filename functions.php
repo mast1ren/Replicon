@@ -34,6 +34,22 @@ function themeConfig($form)
         _t('侧边栏"最近更新"模块显示的文章数量（默认 5）')
     );
 
+    $recentPostsCount = new \Typecho\Widget\Helper\Form\Element\Text(
+        'recentPostsCount',
+        null,
+        '5',
+        _t('最新文章数量'),
+        _t('侧边栏"最新文章"模块显示的文章数量（默认 5）')
+    );
+
+    $recentCommentsCount = new \Typecho\Widget\Helper\Form\Element\Text(
+        'recentCommentsCount',
+        null,
+        '5',
+        _t('最近回复数量'),
+        _t('侧边栏"最近回复"模块显示的评论数量（默认 5）')
+    );
+
     $copyrightInfo = new \Typecho\Widget\Helper\Form\Element\Text(
         'copyrightInfo',
         null,
@@ -64,6 +80,8 @@ function themeConfig($form)
     $form->addInput($logoUrl->addRule('url', _t('请填写一个合法的URL地址')));
     $form->addInput($sidebarBlock->multiMode());
     $form->addInput($recentUpdatesCount);
+    $form->addInput($recentPostsCount);
+    $form->addInput($recentCommentsCount);
     $form->addInput($copyrightInfo);
     $form->addInput($beianInfo);
     $form->addInput($prismjsLineNumbers);

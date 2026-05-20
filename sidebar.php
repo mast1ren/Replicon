@@ -11,7 +11,8 @@
             <section class="widget">
                 <h3 class="widget-title"><?php _e('最新文章'); ?></h3>
                 <ul class="widget-list">
-                    <?php \Widget\Contents\Post\Recent::alloc(['pageSize' => 5])
+                    <?php $recentPostsCount = $this->options->recentPostsCount ?: 5; ?>
+                    <?php \Widget\Contents\Post\Recent::alloc(['pageSize' => intval($recentPostsCount)])
                         ->parse('<li><a href="{permalink}">{title}</a></li>'); ?>
                 </ul>
             </section>
@@ -43,7 +44,8 @@
             <section class="widget">
                 <h3 class="widget-title"><?php _e('最近回复'); ?></h3>
                 <ul class="widget-list">
-                    <?php \Widget\Comments\Recent::alloc()->to($comments); ?>
+                    <?php $recentCommentsCount = $this->options->recentCommentsCount ?: 5; ?>
+                    <?php \Widget\Comments\Recent::alloc(['pageSize' => intval($recentCommentsCount)])->to($comments); ?>
                     <?php while ($comments->next()): ?>
                         <li>
                             <a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?></a>: <?php $comments->excerpt(35, '...'); ?>
