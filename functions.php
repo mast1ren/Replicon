@@ -112,6 +112,18 @@ function postMeta(
 
 function themeFields($layout)
 {
+    $isLatex = new \Typecho\Widget\Helper\Form\Element\Radio(
+        'isLatex',
+        [
+            1 => _t('启用'),
+            0 => _t('关闭')
+        ],
+        0,
+        _t('LaTeX 渲染'),
+        _t('默认关闭增加网页访问速度，如文章内存在LaTeX语法则需要启用')
+    );
+    $layout->addItem($isLatex);
+
     $isCC = new \Typecho\Widget\Helper\Form\Element\Radio(
         'isCC',
         [

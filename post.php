@@ -32,7 +32,17 @@
                 <br><br>
                 <strong>版权声明：</strong>本文部分内容引用或转载自网络，已标明出处，若侵权请联系删除。本文原创部分采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议（CC BY-NC-SA 4.0）</a> 进行许可，转载时须注明出处及本声明。
             </blockquote>
+        <?php elseif ($this->fields->isCC == 0): ?>
+            <div style="border-top: 1px solid #eee; margin: 2em 0;"></div>
+            <blockquote>
+                <strong>本文作者：</strong><a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a>
+                <br><br>
+                <strong>版权声明：</strong>本文为原创内容，版权归<a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a>所有，禁止转载。
+            </blockquote>
         <?php endif; ?>
+
+        <p><?php $this->thePrev(_t('上一篇：%s'), _t('没有上一篇')); ?></p>
+        <p><?php $this->theNext(_t('下一篇：%s'), _t('没有下一篇')); ?></p>
     </article>
 
     <?php $this->need('comments.php'); ?>
