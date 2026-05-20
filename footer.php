@@ -71,10 +71,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <?php endif; ?>
 
 <?php if ($this->is('post') && $this->fields->isMermaid == 1): ?>
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-<script>
+<script data-cfasync="false" src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script data-cfasync="false">
 document.addEventListener("DOMContentLoaded", function() {
-    mermaid.initialize({ startOnLoad: false, theme: 'default' });
+    mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose', fontFamily: '"JetBrains Mono NL", "LXGW Wenkai Screen"' });
     var codeBlocks = document.querySelectorAll('code.lang-mermaid');
     codeBlocks.forEach(function(block, index) {
         var pre = block.parentNode;
