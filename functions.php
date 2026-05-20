@@ -82,16 +82,18 @@ function postMeta(
 <?php
 }
 
-/*
 function themeFields($layout)
 {
-    $logoUrl = new \Typecho\Widget\Helper\Form\Element\Text(
-        'logoUrl',
-        null,
-        null,
-        _t('站点LOGO地址'),
-        _t('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO')
+    $isCC = new \Typecho\Widget\Helper\Form\Element\Radio(
+        'isCC',
+        [
+            1 => _t('完全'),
+            2 => _t('部分'),
+            0 => _t('禁止')
+        ],
+        1,
+        _t('CC 许可'),
+        _t('默认为完全 CC BY-NC-SA 4.0')
     );
-    $layout->addItem($logoUrl);
+    $layout->addItem($isCC);
 }
-*/
