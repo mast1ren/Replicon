@@ -5,16 +5,36 @@
             <h3 class="widget-title"><?php _e('文章目录'); ?></h3>
             <?php echo $this->toc; ?>
         </section>
-    <?php else: ?>
-        <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentPosts', $this->options->sidebarBlock)): ?>
+    <!---?php else: ?--->
+    <?php endif; ?>
+        <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentPosts', $this->options->sidebarBlock) && !$this->is('index')): ?>
             <section class="widget">
                 <h3 class="widget-title"><?php _e('最新文章'); ?></h3>
                 <ul class="widget-list">
-                    <?php \Widget\Contents\Post\Recent::alloc()
+                    <?php \Widget\Contents\Post\Recent::alloc(['pageSize' => 5])
                         ->parse('<li><a href="{permalink}">{title}</a></li>'); ?>
                 </ul>
             </section>
         <?php endif; ?>
+
+        <section class="widget">
+            <h3 class="widget-title"><?php _e('最近更新'); ?></h3>
+            <ul class="widget-list">
+                <?php
+                $db = Typecho_Db::get();
+                $rows = $db->fetchAll($db->select('cid', 'title')
+                    ->from('table.contents')
+                    ->where('type = ?', 'post')
+                    ->where('status = ?', 'publish')
+                    ->order('modified', Typecho_Db::SORT_DESC)
+                    ->limit(5));
+                foreach ($rows as $row):
+                    $permalink = Typecho_Common::url('/archives/' . $row['cid'] . '/', $this->options->index);
+                ?>
+                    <li><a href="<?php echo $permalink; ?>"><?php echo htmlspecialchars($row['title']); ?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </section>
 
         <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentComments', $this->options->sidebarBlock)): ?>
             <section class="widget">
@@ -63,6 +83,6 @@
                     <li><a href="<?php $this->options->commentsFeedUrl(); ?>"><?php _e('评论 RSS'); ?></a></li>
                 </ul>
             </section>
-        <?php endif; ?>
+        
     <?php endif; ?>
 </div><!-- end #sidebar -->

@@ -2,6 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    <link rel="shortcut icon" href="<?php $this->options->themeUrl('favicon.ico'); ?>" type="image/x-icon" />
     <meta charset="<?php $this->options->charset(); ?>">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -24,6 +25,9 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('libs/prism/prism.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/prism-replicon.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('utils/cjk-latin-spacing/cjk-latin-spacing.css'); ?>">
+
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
@@ -71,5 +75,8 @@
     <div class="container">
         <div class="row">
 
-    
-    
+<?php if ($this->is('post') && $this->fields->isLatex == 1): ?>
+<script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+<script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<?php endif; ?>
