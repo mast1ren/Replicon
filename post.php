@@ -41,6 +41,7 @@
             </blockquote>
         <?php endif; ?>
 
+        <div style="border-top: 1px solid #eee; margin: 2em 0;"></div>
         <p><?php $this->thePrev(_t('上一篇：%s'), _t('没有上一篇')); ?></p>
         <p><?php $this->theNext(_t('下一篇：%s'), _t('没有下一篇')); ?></p>
     </article>
