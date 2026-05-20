@@ -17,17 +17,19 @@
             </section>
         <?php endif; ?>
 
+        <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentUpdates', $this->options->sidebarBlock)): ?>
         <section class="widget">
             <h3 class="widget-title"><?php _e('最近更新'); ?></h3>
             <ul class="widget-list">
                 <?php
                 $db = Typecho_Db::get();
+                $recentUpdatesCount = $this->options->recentUpdatesCount ?: 5;
                 $rows = $db->fetchAll($db->select('cid', 'title')
                     ->from('table.contents')
                     ->where('type = ?', 'post')
                     ->where('status = ?', 'publish')
                     ->order('modified', Typecho_Db::SORT_DESC)
-                    ->limit(5));
+                    ->limit(intval($recentUpdatesCount)));
                 foreach ($rows as $row):
                     $permalink = Typecho_Common::url('/archives/' . $row['cid'] . '/', $this->options->index);
                 ?>
@@ -35,6 +37,7 @@
                 <?php endforeach; ?>
             </ul>
         </section>
+        <?php endif; ?>
 
         <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentComments', $this->options->sidebarBlock)): ?>
             <section class="widget">

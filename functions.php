@@ -16,6 +16,7 @@ function themeConfig($form)
         [
             'ShowTOC'            => _t('显示文章目录'),
             'ShowRecentPosts'    => _t('显示最新文章'),
+            'ShowRecentUpdates'  => _t('显示最近更新'),
             'ShowRecentComments' => _t('显示最近回复'),
             'ShowCategory'       => _t('显示分类'),
             'ShowArchive'        => _t('显示归档'),
@@ -23,6 +24,14 @@ function themeConfig($form)
         ],
         ['ShowTOC', 'ShowCategory', 'ShowArchive'],
         _t('侧边栏显示')
+    );
+
+    $recentUpdatesCount = new \Typecho\Widget\Helper\Form\Element\Text(
+        'recentUpdatesCount',
+        null,
+        '5',
+        _t('最近更新数量'),
+        _t('侧边栏"最近更新"模块显示的文章数量（默认 5）')
     );
 
     $copyrightInfo = new \Typecho\Widget\Helper\Form\Element\Text(
@@ -54,6 +63,7 @@ function themeConfig($form)
 
     $form->addInput($logoUrl->addRule('url', _t('请填写一个合法的URL地址')));
     $form->addInput($sidebarBlock->multiMode());
+    $form->addInput($recentUpdatesCount);
     $form->addInput($copyrightInfo);
     $form->addInput($beianInfo);
     $form->addInput($prismjsLineNumbers);
