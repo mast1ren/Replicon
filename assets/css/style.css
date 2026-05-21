@@ -39,7 +39,7 @@ a:hover, a:active {
 pre, code { 
   background: #F5F5F5;
   font-family: var(--code);
-  font-size: .85em;
+  font-size: .92857em;
 }
 code {
   padding: .2em .4em; 
