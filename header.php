@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/print.css'); ?>">
 
     <link rel="stylesheet" href="<?php $this->options->themeUrl('libs/prism/prism.css'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/prism-replicon.css?v=2'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/prism-replicon.css?v=3'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('utils/cjk-latin-spacing/cjk-latin-spacing.css'); ?>">
 
     <!-- FancyBox -->
